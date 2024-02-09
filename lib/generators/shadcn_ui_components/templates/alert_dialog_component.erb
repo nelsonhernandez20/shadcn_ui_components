@@ -1,0 +1,23 @@
+<div data-controller="alert-dialog" class="inline-block">
+  <div data-action="click->alert-dialog#open" class="inline-block">
+    <button type="button" class="whitespace-nowrap inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 px-4 py-2 h-9 text-sm">
+      <%= @trigger_text %>
+    </button>
+  </div>
+  <template data-alert-dialog-target="content">
+    <div data-controller="dismissable">
+      <div data-state="open" class="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" style="pointer-events:auto" data-aria-hidden="true" aria-hidden="true"></div>
+      <div role="alertdialog" data-state="open" class="fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg md:w-full" style="pointer-events:auto"><!-- Before PhlexUI::AlertDialog::Header -->
+        <div class="flex flex-col space-y-2 text-center sm:text-left"><!-- Before PhlexUI::AlertDialog::Title -->
+          <h2 class="text-lg font-semibold"><%=@title%></h2>
+          <!-- Before PhlexUI::AlertDialog::Description -->
+          <p class="text-sm text-muted-foreground"><%=@description%></p>
+        </div>
+        <!-- Before PhlexUI::AlertDialog::Footer -->
+        <div class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2"><!-- Before PhlexUI::AlertDialog::Cancel --><!-- Before PhlexUI::Button --><button type="button" class="whitespace-nowrap inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground px-4 py-2 h-9 text-sm mt-2 sm:mt-0" data-action="click->dismissable#dismiss"><%=@cancel_text%></button>
+        <!-- Before PhlexUI::AlertDialog::Action --><!-- Before PhlexUI::Button -->
+        <button type="button" class="whitespace-nowrap inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 px-4 py-2 h-9 text-sm"><%=@action_text%></button></div>
+      </div>
+    </div>
+  </template>
+</div>

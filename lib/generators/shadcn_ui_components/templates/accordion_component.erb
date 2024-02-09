@@ -1,0 +1,13 @@
+<div class="w-full">
+  <% @items.each do |item|%>
+    <div data-controller="accordion" data-accordion-rotate-icon-value="180" class="border-b"><!-- Before PhlexUI::Accordion::Trigger --><button data-action="click->accordion#toggle" class="w-full flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:underline"><!-- Before PhlexUI::Accordion::DefaultTrigger -->
+        <div class="flex items-center justify-between w-full">
+          <p><%=item[:title]%></p>
+          <span class="opacity-50" data-accordion-target="icon"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path></svg></span></div>
+      </button>
+      <div data-accordion-target="content" class="overflow-y-hidden" style="height: 0px;"><!-- Before PhlexUI::Accordion::DefaultContent -->
+        <div class="pb-4 pt-0 text-sm"><%=item[:content]%></div>
+      </div>
+    </div>
+    <%end%>
+  </div>

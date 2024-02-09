@@ -1,0 +1,6 @@
+<span class="<%=@size%> text-base relative flex shrink-0 overflow-hidden rounded-full">
+  <% if @src.present? %>
+    <img loading="lazy" class="aspect-square h-full w-full" alt="joeldrapper" src="<%=@src%>">
+  <% end %>
+  <span class="flex h-full w-full items-center justify-center rounded-full bg-muted"><%=@initials%></span>
+</span>

@@ -1,0 +1,17 @@
+<div class="w-full space-y-1">
+  <% @items.each do |item| %>
+    <div data-controller="accordion" data-accordion-rotate-icon-value="135" class="data-[accordion-open-value=true]:bg-muted hover:bg-muted rounded-lg pb-3">
+      <button data-action="click->accordion#toggle" class="w-full">
+        <div class="p-6 pb-3 pl-16 relative text-left">
+          <span class="opacity-50 absolute left-6 top-6" data-accordion-target="icon">
+            <%= item[:icon].call %>
+          </span>
+          <p class="font-medium"><%= item[:title] %></p>
+        </div>
+      </button>
+      <div data-accordion-target="content" class="overflow-y-hidden" style="height: 0px;">
+        <p class="pl-16 pr-4 pb-4 text-muted-foreground"><%= item[:content] %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

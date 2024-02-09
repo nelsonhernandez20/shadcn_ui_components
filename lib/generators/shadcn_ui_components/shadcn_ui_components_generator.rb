@@ -7,7 +7,7 @@ module ShadcnUiComponents
 
     def create_component_files
       copy_file "#{component_name}_component.rb", "app/components/#{component_name}_component.rb"
-      copy_file "#{component_name}_component.html.erb", "app/components/#{component_name}_component.html.erb"
+      copy_file "#{component_name}_component.erb", "app/components/#{component_name}_component.html.erb"
 
       # Agrega los controladores Stimulus solo si es "alert_dialog_component"
       if component_name == "alert_dialog"
